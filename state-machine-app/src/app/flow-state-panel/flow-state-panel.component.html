@@ -1,0 +1,22 @@
+<div>
+  <h2>Flow / State Panel</h2>
+  <div>
+    <label>Flow name:</label>
+    <input
+      [(ngModel)]="flowName"
+      placeholder="Input flow name"
+      maxlength="10"
+    />
+    <button (click)="createFlow()">Create Flow</button>
+  </div>
+  <div>
+    <label>State name:</label>
+    <input [(ngModel)]="stateName" placeholder="Input state name" />
+    <select [(ngModel)]="selectedFlowId">
+      <option *ngFor="let flow of flows" [value]="flow.id">
+        {{ flow.name }}
+      </option>
+    </select>
+    <button (click)="createState()">Create State</button>
+  </div>
+</div>
