@@ -26,8 +26,28 @@ div {
 
   label {
     font-weight: bold;
+    margin-right: 5px;
   }
 
   input, select, button {
     margin: 5px;
+  }
+
+  .line-3 {
+    border: 1px solid #000;
+    padding: 10px;
+    margin-top: 10px;
+  }
+
+  .line-3 legend {
+    font-weight: bold;
+    padding: 0 10px;
+  }
+
+  .line-3 select:first-of-type {
+    margin-right: 40px; /* Add gap between the first select (flows list) and the next label */
+  }
+
+  .associated-state {
+    color: black;
   }

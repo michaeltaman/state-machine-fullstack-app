@@ -1,6 +1,6 @@
 import { TestBed } from '@angular/core/testing';
 
-import { FlowStateService } from './flow-state.service';
+import { FlowStateService } from './services/flow-state.service';
 
 describe('FlowStateService', () => {
   let service: FlowStateService;
