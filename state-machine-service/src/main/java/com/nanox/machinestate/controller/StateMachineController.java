@@ -13,6 +13,7 @@ import java.util.Optional;
 
 @RestController
 @RequestMapping("/state-machine")
+@CrossOrigin(origins = "http://localhost:4200")
 public class StateMachineController {
 
     private final StateMachineService stateMachineService;

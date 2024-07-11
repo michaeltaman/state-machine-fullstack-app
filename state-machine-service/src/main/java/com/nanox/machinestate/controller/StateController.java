@@ -14,6 +14,7 @@ import java.util.stream.Collectors;
 
 @RestController
 @RequestMapping("/states")
+@CrossOrigin(origins = "http://localhost:4200")
 public class StateController {
 
     @Autowired
