@@ -1,5 +1,6 @@
 package com.nanox.machinestate.service;
 
+import com.nanox.machinestate.exception.DuplicateResourceException;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
@@ -22,6 +23,13 @@ public class StateService {
     public State createState(String name, Long flowId, String value) {
         // Fetch the associated flow
         Flow flow = flowService.getFlowById(flowId);
+
+        // Check if a state with the same name already exists for the given flow
+        Optional<State> existingState = stateRepository.findByFlowAndName(flow, name);
+        if (existingState.isPresent()) {
+            throw new DuplicateResourceException("A state with the name '" + name + "' already exists in the flow '" + flow.getName() + "'.");
+        }
+
         // Create and save the new state with the provided value or an empty string if not provided
         State newState = new State(name, value, flow);
         return stateRepository.save(newState);

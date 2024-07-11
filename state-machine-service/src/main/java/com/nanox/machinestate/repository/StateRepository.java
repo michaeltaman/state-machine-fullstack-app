@@ -16,5 +16,7 @@ public interface StateRepository extends JpaRepository<State, Long> {
 
     Optional<State> findByName(String name);
 
+    Optional<State> findByFlowAndName(Flow flow, String name);
+
     void deleteByFlow(Flow flow);
 }
