@@ -16,6 +16,8 @@ export class FlowStatePanelComponent implements OnInit {
   stateName: string = '';
   flows: any[] = [];
   selectedFlowId: number | null = null;
+  message: string = '';
+  messageType: 'success' | 'error' = 'success';
 
   constructor(private flowStateService: FlowStateService) {}
 
@@ -25,10 +27,18 @@ export class FlowStatePanelComponent implements OnInit {
 
   createFlow() {
     if (this.flowName) {
-      this.flowStateService.createFlow(this.flowName).subscribe(() => {
-        this.getFlows();
-        this.flowName = '';
-      });
+      this.flowStateService.createFlow(this.flowName).subscribe(
+        () => {
+          this.getFlows();
+          this.message = `FLOW ${this.flowName} is created`;
+          this.messageType = 'success';
+          this.flowName = '';
+        },
+        (error) => {
+          this.message = `It is not possible to duplicate the same FLOW ${this.flowName}`;
+          this.messageType = 'error';
+        }
+      );
     }
   }
 
@@ -42,9 +52,17 @@ export class FlowStatePanelComponent implements OnInit {
     if (this.stateName && this.selectedFlowId !== null) {
       this.flowStateService
         .createState(this.stateName, this.selectedFlowId)
-        .subscribe(() => {
-          this.stateName = '';
-        });
+        .subscribe(
+          () => {
+            this.message = `State ${this.stateName} is created`;
+            this.messageType = 'success';
+            this.stateName = '';
+          },
+          (error) => {
+            this.message = `It is not possible to duplicate the same State ${this.stateName}`;
+            this.messageType = 'error';
+          }
+        );
     }
   }
 }

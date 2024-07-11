@@ -1,5 +1,11 @@
-<div>
+<div class="panel">
   <h2>Flow / State Panel</h2>
+  <div
+    *ngIf="message"
+    [ngClass]="messageType === 'success' ? 'message-success' : 'message-error'"
+  >
+    {{ message }}
+  </div>
   <div>
     <label>Flow name:</label>
     <input

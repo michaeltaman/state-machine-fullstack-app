@@ -9,3 +9,25 @@ div {
   input, select, button {
     margin: 5px;
   }
+
+  .panel {
+    border: 2px double #000;
+    padding: 20px;
+    margin: 20px;
+  }
+
+  .message-success {
+    color: green;
+  }
+
+  .message-error {
+    color: red;
+  }
+
+  label {
+    font-weight: bold;
+  }
+
+  input, select, button {
+    margin: 5px;
+  }
