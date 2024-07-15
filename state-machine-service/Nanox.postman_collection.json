@@ -225,6 +225,98 @@
 					]
 				},
 				{
+					"name": "Old_Actions",
+					"item": [
+						{
+							"name": "AddAction",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n  \"name\": \"Test Action\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:8080/actions",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"actions"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "GetAllActions",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:8080/actions",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"actions"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "DeleteAction",
+							"request": {
+								"method": "DELETE",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:8080/actions/2",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"actions",
+										"2"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "UpdateAction",
+							"request": {
+								"method": "DELETE",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:8080/actions/2",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"actions",
+										"2"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
 					"name": "Trigger_EVENT1",
 					"request": {
 						"method": "GET",
@@ -365,93 +457,6 @@
 					"response": []
 				}
 			]
-		},
-		{
-			"name": "AddAction",
-			"request": {
-				"method": "POST",
-				"header": [],
-				"body": {
-					"mode": "raw",
-					"raw": "{\r\n  \"name\": \"Test Action\"\r\n}",
-					"options": {
-						"raw": {
-							"language": "json"
-						}
-					}
-				},
-				"url": {
-					"raw": "http://localhost:8080/actions",
-					"protocol": "http",
-					"host": [
-						"localhost"
-					],
-					"port": "8080",
-					"path": [
-						"actions"
-					]
-				}
-			},
-			"response": []
-		},
-		{
-			"name": "GetAllActions",
-			"request": {
-				"method": "GET",
-				"header": [],
-				"url": {
-					"raw": "http://localhost:8080/actions",
-					"protocol": "http",
-					"host": [
-						"localhost"
-					],
-					"port": "8080",
-					"path": [
-						"actions"
-					]
-				}
-			},
-			"response": []
-		},
-		{
-			"name": "DeleteAction",
-			"request": {
-				"method": "DELETE",
-				"header": [],
-				"url": {
-					"raw": "http://localhost:8080/actions/2",
-					"protocol": "http",
-					"host": [
-						"localhost"
-					],
-					"port": "8080",
-					"path": [
-						"actions",
-						"2"
-					]
-				}
-			},
-			"response": []
-		},
-		{
-			"name": "UpdateAction",
-			"request": {
-				"method": "DELETE",
-				"header": [],
-				"url": {
-					"raw": "http://localhost:8080/actions/2",
-					"protocol": "http",
-					"host": [
-						"localhost"
-					],
-					"port": "8080",
-					"path": [
-						"actions",
-						"2"
-					]
-				}
-			},
-			"response": []
 		}
 	]
 }
